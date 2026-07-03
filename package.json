@@ -1,6 +1,6 @@
 {
   "name": "@shakiraliswe/searchable-select",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A searchable, accessible MUI Select component for React.",
   "license": "MIT",
   "author": "shakiraliswe",
