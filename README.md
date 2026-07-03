@@ -43,14 +43,7 @@ const options = [
 function Example() {
   const [value, setValue] = useState<string | number>("apple");
 
-  return (
-    <SearchableSelect
-      label="Fruit"
-      options={options}
-      value={value}
-      onChange={setValue}
-    />
-  );
+  return <SearchableSelect label="Fruit" options={options} value={value} onChange={setValue} />;
 }
 ```
 
@@ -80,17 +73,17 @@ function Example() {
 
 ## Props
 
-| Prop | Type | Default | Description |
-|---|---|---|---|
-| `options` | `SelectOption[]` | — | **Required.** Options rendered in the dropdown. |
-| `value` | `string \| number` | — | **Required.** Currently selected value. |
-| `onChange` | `(value: string \| number) => void` | — | **Required.** Called when a new option is selected. |
-| `label` | `string` | `""` | Field label. |
-| `loading` | `boolean` | `false` | Shows a spinner in place of the dropdown arrow and disables the control. |
-| `hasSearch` | `boolean` | `true` | Show/hide the in-menu search field. |
-| `searchPlaceholder` | `string` | `"Type to search..."` | Placeholder text for the search input. |
-| `searchDebounceMs` | `number` | `0` | Debounce delay applied to the search filter. |
-| `noOptionsContent` | `ReactNode` | `"No options found"` | Rendered when no options match the search query. |
+| Prop                | Type                                | Default               | Description                                                              |
+| ------------------- | ----------------------------------- | --------------------- | ------------------------------------------------------------------------ |
+| `options`           | `SelectOption[]`                    | —                     | **Required.** Options rendered in the dropdown.                          |
+| `value`             | `string \| number`                  | —                     | **Required.** Currently selected value.                                  |
+| `onChange`          | `(value: string \| number) => void` | —                     | **Required.** Called when a new option is selected.                      |
+| `label`             | `string`                            | `""`                  | Field label.                                                             |
+| `loading`           | `boolean`                           | `false`               | Shows a spinner in place of the dropdown arrow and disables the control. |
+| `hasSearch`         | `boolean`                           | `true`                | Show/hide the in-menu search field.                                      |
+| `searchPlaceholder` | `string`                            | `"Type to search..."` | Placeholder text for the search input.                                   |
+| `searchDebounceMs`  | `number`                            | `0`                   | Debounce delay applied to the search filter.                             |
+| `noOptionsContent`  | `ReactNode`                         | `"No options found"`  | Rendered when no options match the search query.                         |
 
 `SearchableSelect` also accepts all other props of MUI's `Select` (except
 `value`, `onChange`, and `children`, which are controlled by this component),
@@ -104,30 +97,9 @@ interface SelectOption {
 }
 ```
 
-## Development
+### Demo
 
-```bash
-npm install
-npm run dev        # tsup --watch
-npm run test        # vitest
-npm run lint
-npm run typecheck
-npm run build
-```
-
-### Releasing
-
-This repo uses [Changesets](https://github.com/changesets/changesets).
-
-```bash
-npx changeset          # describe your change
-npx changeset version  # bump version + update CHANGELOG.md
-npm run release        # build + publish
-```
-
-Or just push to `main` — the `release.yml` workflow opens/updates a "Version
-Packages" PR automatically and publishes to npm when it's merged (requires an
-`NPM_TOKEN` secret in the repo settings).
+[Click to view demo](https://searchable-select.lovable.app).
 
 ## License
 
